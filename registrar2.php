@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="estilo/estilos.css">
 </head>
 <body background="fondo.jpg">
-    <h1>Registrar mascota</h1>
-    <form action="procesar_registro.php" method="post">
+    <h1>Registro de esterilización</h1>
+    <form action="procesar_registro2.php" method="post">
         <div>
             Especie: <input type="text" name="e">
         </div>
@@ -17,9 +17,9 @@
             Raza: <input type="text" name="r">
         </div>
         <div>
-            Lugar: <input type="text" name="l">
+            Dueños: <input type="text" name="d">
         </div>
-        <button>Enviar</button>
+        <button>Registrar</button>
         </form>
 </body>
 </html>

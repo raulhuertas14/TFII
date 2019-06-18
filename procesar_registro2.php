@@ -1,11 +1,10 @@
 <?php
 $especie = $_POST["e"];
 $raza = $_POST["r"];
-$lugar = $_POST["l"];
-$id = $_POST["id"];
+$dueños = $_POST["d"];
 
 $pdo = new PDO("mysql:host=localhost;dbname=mascotas;charset=utf8", "root", "");
-$pdo->query("UPDATE mascotas SET especie='$especie',raza='$raza',lugar='$lugar' WHERE id='$id'");
+$pdo->query("INSERT INTO esterilizacion VALUES (NULL,'$especie','$raza','$dueños')");
 
 header("Location: documento.php");
 ?>

@@ -1,0 +1,52 @@
+/* ESTILOS*/
+body {
+    width: 100%;
+}
+
+.cuerpo {
+    width: 50%;
+    float: left;
+}
+
+.perrunos {
+    width: 50%;
+    float: left;
+}
+
+img {
+    width: 700px; 
+    height: 500px;
+    margin-left: 120px;
+}
+
+h1 {
+    font-size:45px; 
+    font-weight: bold; 
+    text-align: center; 
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+h2 {
+    font-size:24px; 
+    font-weight: bold; 
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+table {
+    font-size:20px; 
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: white; 
+}
+
+/*FORM*/
+
+form {
+    font-size:24px; 
+    font-weight: bold; 
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+

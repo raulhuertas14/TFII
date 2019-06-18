@@ -1,7 +1,6 @@
 <?php
 $pdo = new PDO("mysql:host=localhost;dbname=mascotas;charset=utf8", "root", "");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,30 +9,54 @@ $pdo = new PDO("mysql:host=localhost;dbname=mascotas;charset=utf8", "root", "");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="estilo/estilos.css">
-    <style type="text/css">
-    h1 {font-size:45px; font-weight: bold; background-color: white; text-align: center; }
-    h2 {font-size:24px; font-weight: bold; background-color: white; }
-    table {font-size:20px; font-weight: bold; background-color: white; }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body background="fondo.jpg">
-    <h1>Bienvenidos al portal "Animales Sin Hogar"</h1>
-    <h2>¿Vio a un animal perdido? Registrelo aqui!</h2>
-    <?php
-    ?>
-    <table border="1">
-        <tr>
-            <th>Raza</th>
-            <th>Lugar</th>
-            <th><a href="registrar.php">Registrar</a></th>
-        </tr>
-        <?php foreach ($pdo->query("SELECT * FROM mascotas") as $fila){ ?>
-        <tr>
-            <td><?php echo $fila["raza"] ?></td>
-            <td><?php echo $fila["lugar"] ?></td>
-            <td><a href="editar_mascota.php?id=<?php echo $fila["id"]?>">Editar</a></td>
-        </tr>
-        <?php } ?>
-    </table>
+    <div class="cuerpo">
+        <h1>Bienvenidos al portal "Control de Mascotas"</h1>
+        <h2>¿Vio a un animal perdido? Registrelo aqui!</h2>
+        <?php
+        ?>
+        <table border="10">
+            <tr>
+                <th>Especie</th>
+                <th>Raza</th>
+                <th>Lugar</th>
+                <th><a href="registrar.php">Registrar</a></th>
+                <th>Adopción</th>
+                
+            </tr>
+            <?php foreach ($pdo->query("SELECT * FROM mascotas") as $fila){ ?>
+            <tr>
+                <td><?php echo $fila["especie"] ?></td>
+                <td><?php echo $fila["raza"] ?></td>
+                <td><?php echo $fila["lugar"] ?></td>
+                <td><a href="editar_mascota.php?id=<?php echo $fila["id"]?>">Editar</a></td>
+                <td><a href="adopcion.php?id=<?php echo $fila["id"]?>">¿Adoptar mascota?</a></td>
+            </tr>
+            <?php } ?>
+        </table>
+        <h2>(Recibira un email de su registro de adopción en aproximadamente 1 semana)</h2>
+    </div>
+    <div class="perrunos"><img src="imagen2.jpeg">
+                
+    </div>
+    <div>
+        <h2>¿Necesita esterilizar a su mascota? Registrela <a href="registrar2.php">AQUI</a> para proceder con la cita:</h2>
+        <?php
+        ?>
+        <table border="10">
+            <tr>
+                <th>Mascota registrada</th>
+                <th>Espera para la cita</th>
+            </tr>
+            <?php foreach ($pdo->query("SELECT * FROM esterilizacion") as $fila){ ?>
+            <tr>
+                <td><?php echo $fila["especie"] ?> <?php echo $fila["raza"] ?></td>
+                <td>Espera de la cita: 1 semana</td>
+            </tr>
+            <?php } ?>
+        </table>
+    </div>
 </body>
 </html>
